@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专业简历模板 - 求职面试一站式解决方案</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部样式 */
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* 导航样式 */
+        nav {
+            background-color: #3498db;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #2980b9;
+        }
+
+        /* 产品分类导航 */
+        .category-nav {
+            background-color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .category-nav ul li {
+            margin: 0 10px;
+            margin-bottom: 10px;
+        }
+
+        .category-nav ul li a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 15px;
+            border: 2px solid #3498db;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .category-nav ul li a:hover {
+            background-color: #3498db;
+            color: #fff;
+        }
+
+        /* 产品展示区 */
+        .product-section {
+            padding: 50px 0;
+        }
+
+        .product-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f5f7fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .product-info .category {
+            color: #3498db;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-info .features {
+            margin-bottom: 15px;
+        }
+
+        .product-info .features ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        .product-info .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+
+        .buy-button {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* 购买指引 */
+        .purchase-guide {
+            background-color: #fff;
+            padding: 50px 0;
+            margin-bottom: 50px;
+        }
+
+        .purchase-guide h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+
+        .guide-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        /* 用户评价 */
+        .testimonials {
+            padding: 50px 0;
+            background-color: #f5f7fa;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .testimonial-card .author {
+            text-align: right;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* 联系方式 */
+        .contact-info {
+            padding: 50px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .contact-method {
+            text-align: center;
+        }
+
+        .contact-method h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        /* 引流钩子 */
+        .lead-magnet {
+            padding: 50px 0;
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+        }
+
+        .lead-magnet h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .lead-magnet p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .lead-button {
+            display: inline-block;
+            background-color: #fff;
+            color: #3498db;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .lead-button:hover {
+            background-color: #f5f7fa;
+            transform: scale(1.05);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部 -->
+    <header>
+        <div class="container">
+            <h1>专业简历模板 - 求职面试一站式解决方案</h1>
+            <p>让你的简历脱颖而出，轻松拿到理想Offer</p>
+        </div>
+    </header>
+
+    <!-- 主导航 -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">首页</a></li>
+                <li><a href="#products">产品展示</a></li>
+                <li><a href="#purchase">购买指引</a></li>
+                <li><a href="#testimonials">用户评价</a></li>
+                <li><a href="#contact">联系方式</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 产品分类导航 -->
+    <div class="category-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#resume-templates">简历模板</a></li>
+                <li><a href="#interview-guides">面试指南</a></li>
+                <li><a href="#excel-templates">Excel模板</a></li>
+                <li><a href="#travel-guides">旅游攻略</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 产品展示区 -->
+    <section id="products" class="product-section">
+        <div class="container">
+            <h2>精选产品展示</h2>
+            <div class="product-grid">
+                <!-- 产品1：应届生简历模板 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <p>应届生简历模板截图</p>
+                    </div>
+                    <div class="product-info">
+                        <h3>应届生简历模板</h3>
+                        <p class="category">适用场景：应届生求职</p>
+                        <div class="features">
+                            <ul>
+                                <li>简洁大方的设计风格</li>
+                                <li>ATS系统兼容</li>
+                                <li>完全可编辑</li>
+                                <li>包含自荐信模板</li>
+                            </ul>
+                        </div>
+                        <p class="price">¥9.9</p>
+                        <a href="#purchase" class="buy-button">立即购买</a>
+                    </div>
+                </div>
+
+                <!-- 产品2：职场转型简历模板 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <p>职场转型简历模板截图</p>
+                    </div>
+                    <div class="product-info">
+                        <h3>职场转型简历模板</h3>
+                        <p class="category">适用场景：职场转型、跨行业求职</p>
+                        <div class="features">
+                            <ul>
+                                <li>突出可转移技能</li>
+                                <li>隐藏职业空白期</li>
+                                <li>专业配色方案</li>
+                                <li>包含求职信模板</li>
+                            </ul>
+                        </div>
+                        <p class="price">¥12.9</p>
+                        <a href="#purchase" class="buy-button">立即购买</a>
+                    </div>
+                </div>
+
+                <!-- 产品3：特定行业简历模板 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <p>特定行业简历模板截图</p>
+                    </div>
+                    <div class="product-info">
+                        <h3>特定行业简历模板</h3>
+                        <p class="category">适用场景：互联网、金融、咨询等行业</p>
+                        <div class="features">
+                            <ul>
+                                <li>行业专属关键词</li>
+                                <li>突出项目经验</li>
+                                <li>专业排版设计</li>
+                                <li>包含面试技巧指南</li>
+                            </ul>
+                        </div>
+                        <p class="price">¥14.9</p>
+                        <a href="#purchase" class="buy-button">立即购买</a>
+                    </div>
+                </div>
+
+                <!-- 产品4：面试指南 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <p>面试指南截图</p>
+                    </div>
+                    <div class="product-info">
+                        <h3>面试指南电子书</h3>
+                        <p class="category">适用场景：所有求职者</p>
+                        <div class="features">
+                            <ul>
+                                <li>常见面试问题解析</li>
+                                <li>STAR法则详解</li>
+                                <li>薪资谈判技巧</li>
+                                <li>面试礼仪指南</li>
+                            </ul>
+                        </div>
+                        <p class="price">¥6.9</p>
+                        <a href="#purchase" class="buy-button">立即购买</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 购买指引 -->
+    <section id="purchase" class="purchase-guide">
+        <div class="container">
+            <h2>购买流程指引</h2>
+            <div class="guide-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>浏览产品</h3>
+                    <p>在闲鱼店铺中浏览我们的简历模板和面试指南产品</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>下单购买</h3>
+                    <p>选择心仪的产品，点击购买按钮，完成支付流程</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>获取文件</h3>
+                    <p>支付成功后，我们会通过邮箱或网盘链接发送文件</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>售后服务</h3>
+                    <p>如有任何问题，随时联系我们，提供7天无理由退款</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 用户评价 -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>用户真实评价</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"使用这个简历模板后，我拿到了3个面试邀请，最终成功入职了心仪的公司。模板设计非常专业，ATS系统轻松通过！"</p>
+                    <p class="author">- 张先生，互联网行业</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"面试指南电子书内容非常实用，里面的STAR法则详解帮我在面试中表现出色，顺利拿到了offer。"</p>
+                    <p class="author">- 李女士，金融行业</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"客服服务非常周到，文件发送及时，模板质量很高，性价比十足！强烈推荐给所有求职者。"</p>
+                    <p class="author">- 王先生，应届生</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="contact-info">
+        <div class="container">
+            <h2>联系我们</h2>
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h3>闲鱼店铺</h3>
+                    <p>搜索：求职简历模板专家</p>
+                </div>
+                <div class="contact-method">
+                    <h3>邮箱</h3>
+                    <p>contact@resumetemplates.com</p>
+                </div>
+                <div class="contact-method">
+                    <h3>微信</h3>
+                    <p>resume_expert_2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 引流钩子1 -->
+    <section class="lead-magnet">
+        <div class="container">
+            <h2>获取免费面试技巧电子书</h2>
+            <p>添加微信，回复"面试技巧"，即可免费领取价值19.9元的面试技巧电子书</p>
+            <a href="#contact" class="lead-button">立即获取</a>
+        </div>
+    </section>
+
+    <!-- 引流钩子2 -->
+    <section class="lead-magnet" style="background-color: #2c3e50;">
+        <div class="container">
+            <h2>关注闲鱼店铺，获取更多优惠</h2>
+            <p>关注我们的闲鱼店铺，即可享受新人专属优惠和定期促销活动</p>
+            <a href="#contact" class="lead-button">立即关注</a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 专业简历模板 - 求职面试一站式解决方案. 保留所有权利.</p>
+        </div>
+    </footer>
+</body>
+</html>
